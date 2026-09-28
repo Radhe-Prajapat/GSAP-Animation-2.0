@@ -1,0 +1,261 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background-color:#050508;
+}
+
+#main{
+    height:400px;
+    width:100%;
+    background: linear-gradient(180deg, #0a0008 0%, #0d0515 30%, #10081c 60%, #080010 100%);
+    color:white;
+    position:relative;
+    overflow:hidden;
+}
+
+/* Eerie red glow behind center */
+#main::before{
+    content:"";
+    position:absolute;
+    top:55%;
+    left:50%;
+    width:500px;
+    height:250px;
+    transform:translate(-50%, -50%);
+    background: radial-gradient(ellipse, rgba(220,0,0,0.15) 0%, rgba(120,0,0,0.06) 45%, transparent 70%);
+    pointer-events:none;
+    z-index:0;
+    animation: eerieGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes eerieGlow{
+    0%{
+        opacity:0.4;
+        transform:translate(-50%, -50%) scale(1);
+    }
+    100%{
+        opacity:1;
+        transform:translate(-50%, -50%) scale(1.25);
+    }
+}
+
+/* ========== Spider Webs ========== */
+
+.spider-web{
+    position:absolute;
+    top:0;
+    right:0;
+    width:180px;
+    height:180px;
+    z-index:2;
+    pointer-events:none;
+    opacity:0.9;
+    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.762));
+}
+
+.spider-web-left{
+    right:auto;
+    left:0;
+}
+
+/* ========== Hanging Spider ========== */
+
+#spiderThread{
+    position:absolute;
+    top:0;
+    right:130px;
+    width:40px;
+    z-index:3;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    transform-origin:top center;
+}
+
+#spiderThread::before{
+    content:"";
+    width:1px;
+    height:75px;
+    background:rgba(255, 255, 255, 0.88);
+    display:block;
+}
+
+#spiderSvg{
+    filter: drop-shadow(0 0 10px rgba(255,0,0,0.3)) drop-shadow(0 2px 6px rgba(255,255,255,0.15));
+}
+
+/* ========== Bats ========== */
+
+.bat{
+    position:absolute;
+    z-index:4;
+    pointer-events:none;
+    opacity:0;
+    filter: drop-shadow(0 0 5px rgba(255,255,255,0.15));
+}
+
+.bat1{ top:30px; left:-60px; }
+.bat2{ top:65px; left:-50px; }
+.bat3{ top:15px; left:-40px; }
+.bat4{ top:50px; left:-70px; }
+
+/* ========== Floating Particles ========== */
+
+.particle{
+    position:absolute;
+    border-radius:50%;
+    pointer-events:none;
+    z-index:1;
+    opacity:0;
+}
+
+.p1{ width:4px; height:4px; background:rgba(255,255,255,0.35); top:80%; left:15%; }
+.p2{ width:3px; height:3px; background:rgba(200,180,255,0.3);  top:60%; left:70%; }
+.p3{ width:5px; height:5px; background:rgba(255,200,200,0.25); top:40%; left:40%; }
+.p4{ width:3px; height:3px; background:rgba(255,255,255,0.3);  top:75%; left:85%; }
+.p5{ width:4px; height:4px; background:rgba(180,150,255,0.3);  top:50%; left:25%; }
+.p6{ width:3px; height:3px; background:rgba(255,150,150,0.25); top:30%; left:55%; }
+.p7{ width:4px; height:4px; background:rgba(255,255,255,0.2);  top:85%; left:60%; }
+.p8{ width:3px; height:3px; background:rgba(200,200,255,0.25); top:20%; left:80%; }
+
+/* ========== HORROR Heading & Blood Effects ========== */
+
+.title-container{
+    position:relative;
+    z-index:5;
+    width:fit-content;
+    margin:0 auto;
+    padding-top:40px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+h1#horrorText{
+    position:relative;
+    z-index:6;
+    text-align:center;
+    font-size:75px;
+    font-family:"Ubuntu", sans-serif;
+    font-weight:700;
+    letter-spacing:6px;
+    line-height:1;
+
+    /* Deep Vibrant Blood Red Gradient */
+    background: linear-gradient(180deg, #ff4444 0%, #cc0000 40%, #880000 75%, #440000 100%);
+    color:transparent;
+    background-clip:text;
+    -webkit-background-clip:text;
+
+    /* Intense Blood Glow */
+    filter: drop-shadow(0 0 12px rgba(255,0,0,0.8)) drop-shadow(0 0 35px rgba(180,0,0,0.6)) drop-shadow(0 0 70px rgba(120,0,0,0.4));
+
+    animation: bloodPulse 3.5s ease-in-out infinite alternate;
+}
+
+@keyframes bloodPulse{
+    0%{
+        transform: translateY(0px) scale(1);
+        filter: drop-shadow(0 0 10px rgba(255,0,0,0.7)) drop-shadow(0 0 30px rgba(180,0,0,0.5));
+    }
+    100%{
+        transform: translateY(-4px) scale(1.02);
+        filter: drop-shadow(0 0 18px rgba(255,30,30,0.95)) drop-shadow(0 0 45px rgba(220,0,0,0.75));
+    }
+}
+
+/* Static Blood SVG Drips attached to text bottom */
+.blood-drips-svg{
+    position:absolute;
+    top:105px;
+    width:340px;
+    height:35px;
+    z-index:5;
+    pointer-events:none;
+    overflow:visible;
+    filter: drop-shadow(0 2px 4px rgba(150,0,0,0.7));
+}
+
+.static-drip{
+    transform-origin: top center;
+}
+
+/* Dynamic Falling Blood Drop styling */
+#bloodDropContainer{
+    position:absolute;
+    top:110px;
+    left:0;
+    width:100%;
+    height:250px;
+    pointer-events:none;
+    z-index:7;
+}
+
+.blood-drop{
+    position:absolute;
+    width:7px;
+    height:11px;
+    background: radial-gradient(circle at 35% 30%, #ff4444 0%, #aa0000 60%, #550000 100%);
+    border-radius:50% 50% 50% 50% / 30% 30% 70% 70%;
+    box-shadow: 0 0 8px #ff0000, inset 0 0 3px #ffaaaa;
+    pointer-events:none;
+}
+
+/* Splash effect when blood drop hits bottom */
+.blood-splash{
+    position:absolute;
+    width:12px;
+    height:4px;
+    background: #cc0000;
+    border-radius:50%;
+    box-shadow: 0 0 8px #ff0000;
+    pointer-events:none;
+    opacity:0;
+}
+
+/* ========== SVG Curve & Eye ========== */
+
+#curve{
+    position:relative;
+    z-index:5;
+    width:100%;
+    height:280px;
+    display:block;
+}
+
+#line{
+    fill:none;
+    stroke: rgba(255,255,255,0.8);
+    stroke-width:2.5;
+    stroke-linecap:round;
+    filter: drop-shadow(0 0 8px rgba(200,0,0,0.35));
+}
+
+#eyeGroup{
+    pointer-events:none;
+}
+
+#eyeTop,
+#eyeBottom{
+    fill:none;
+    stroke: rgba(255,255,255,0.8);
+    stroke-width:2.5;
+    stroke-linecap:round;
+    filter: drop-shadow(0 0 8px rgba(200,0,0,0.35));
+}
+
+#pupilGroup{
+    pointer-events:none;
+}
+
+#sclera{
+    filter: drop-shadow(0 0 15px rgba(255,0,0,0.2));
+}
+
+#iris{
+    filter: drop-shadow(0 0 6px rgba(255,0,0,0.5));
+}

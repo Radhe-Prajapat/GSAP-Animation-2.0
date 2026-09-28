@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HORROR</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="main">
+
+        <!-- Spider Web (Top-Right Corner) -->
+        <svg class="spider-web" viewBox="0 0 200 200">
+            <line x1="0" y1="0" x2="200" y2="200" stroke="rgba(255,255,255,0.25)" stroke-width="1"/>
+            <line x1="0" y1="0" x2="100" y2="200" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
+            <line x1="0" y1="0" x2="200" y2="100" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
+            <line x1="0" y1="0" x2="0" y2="200" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+            <line x1="0" y1="0" x2="200" y2="0" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+            <line x1="0" y1="0" x2="50" y2="200" stroke="rgba(255,255,255,0.16)" stroke-width="1"/>
+            <line x1="0" y1="0" x2="200" y2="50" stroke="rgba(255,255,255,0.16)" stroke-width="1"/>
+            <line x1="0" y1="0" x2="150" y2="200" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+            <line x1="0" y1="0" x2="200" y2="150" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+            <!-- Spiral arcs -->
+            <path d="M 20 0 Q 20 20 0 20" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="0.9"/>
+            <path d="M 50 0 Q 50 50 0 50" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="0.9"/>
+            <path d="M 85 0 Q 85 85 0 85" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="0.9"/>
+            <path d="M 120 0 Q 120 120 0 120" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="0.9"/>
+            <path d="M 160 0 Q 160 160 0 160" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="0.9"/>
+            <path d="M 200 0 Q 200 200 0 200" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="0.9"/>
+        </svg>
+
+        <!-- Spider Web (Top-Left Corner) -->
+        <svg class="spider-web spider-web-left" viewBox="0 0 200 200">
+            <line x1="200" y1="0" x2="0" y2="200" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
+            <line x1="200" y1="0" x2="100" y2="200" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+            <line x1="200" y1="0" x2="0" y2="100" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+            <line x1="200" y1="0" x2="200" y2="200" stroke="rgba(255,255,255,0.16)" stroke-width="1"/>
+            <line x1="200" y1="0" x2="0" y2="0" stroke="rgba(255,255,255,0.16)" stroke-width="1"/>
+            <path d="M 180 0 Q 180 20 200 20" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="0.9"/>
+            <path d="M 150 0 Q 150 50 200 50" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="0.9"/>
+            <path d="M 115 0 Q 115 85 200 85" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="0.9"/>
+            <path d="M 80 0 Q 80 120 200 120" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="0.9"/>
+            <path d="M 40 0 Q 40 160 200 160" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="0.9"/>
+        </svg>
+
+        <!-- Hanging Spider from web -->
+        <div id="spiderThread">
+            <svg id="spiderSvg" viewBox="0 0 50 60" width="40" height="48">
+                <!-- Spider body -->
+                <ellipse cx="25" cy="35" rx="10" ry="13" fill="#555" stroke="#ffffff" stroke-width="1.2"/>
+                <!-- Spider head -->
+                <circle cx="25" cy="18" r="7" fill="#4a4a4a" stroke="#ffffff" stroke-width="1.2"/>
+                <!-- Spider neck / gala (white band) -->
+                <ellipse cx="25" cy="24" rx="6" ry="2.5" fill="#ffffff" opacity="0.95" filter="drop-shadow(0 0 3px #ffffff)"/>
+                <!-- Eyes - bright red glowing -->
+                <circle cx="22" cy="16" r="2.5" fill="#ff0000" opacity="1"/>
+                <circle cx="28" cy="16" r="2.5" fill="#ff0000" opacity="1"/>
+                <circle cx="22" cy="16" r="1" fill="#ffaaaa" opacity="0.9"/>
+                <circle cx="28" cy="16" r="1" fill="#ffaaaa" opacity="0.9"/>
+                <!-- Legs Left - bright grey -->
+                <path d="M 15 28 Q 5 22 2 15" fill="none" stroke="rgba(200,200,200,0.7)" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M 15 32 Q 3 30 0 24" fill="none" stroke="rgba(200,200,200,0.7)" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M 16 37 Q 4 40 1 34" fill="none" stroke="rgba(200,200,200,0.65)" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M 17 42 Q 6 48 3 44" fill="none" stroke="rgba(200,200,200,0.65)" stroke-width="1.5" stroke-linecap="round"/>
+                <!-- Legs Right - bright grey -->
+                <path d="M 35 28 Q 45 22 48 15" fill="none" stroke="rgba(200,200,200,0.7)" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M 35 32 Q 47 30 50 24" fill="none" stroke="rgba(200,200,200,0.7)" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M 34 37 Q 46 40 49 34" fill="none" stroke="rgba(200,200,200,0.65)" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M 33 42 Q 44 48 47 44" fill="none" stroke="rgba(200,200,200,0.65)" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+        </div>
+
+        <!-- Flying Bats - LIGHT colored for dark bg -->
+        <svg class="bat bat1" viewBox="0 0 80 40" width="50" height="25">
+            <path class="bat-wing-left" d="M 40 20 Q 30 5 10 8 Q 20 15 15 22 Q 25 18 40 20" fill="rgba(180,180,180,0.8)"/>
+            <path class="bat-wing-right" d="M 40 20 Q 50 5 70 8 Q 60 15 65 22 Q 55 18 40 20" fill="rgba(180,180,180,0.8)"/>
+            <ellipse cx="40" cy="22" rx="5" ry="6" fill="rgba(160,160,160,0.9)"/>
+            <circle cx="38" cy="20" r="1.2" fill="#ff3333" opacity="0.9"/>
+            <circle cx="42" cy="20" r="1.2" fill="#ff3333" opacity="0.9"/>
+        </svg>
+
+        <svg class="bat bat2" viewBox="0 0 80 40" width="40" height="20">
+            <path class="bat-wing-left" d="M 40 20 Q 30 5 10 8 Q 20 15 15 22 Q 25 18 40 20" fill="rgba(160,160,170,0.75)"/>
+            <path class="bat-wing-right" d="M 40 20 Q 50 5 70 8 Q 60 15 65 22 Q 55 18 40 20" fill="rgba(160,160,170,0.75)"/>
+            <ellipse cx="40" cy="22" rx="5" ry="6" fill="rgba(140,140,150,0.85)"/>
+            <circle cx="38" cy="20" r="1" fill="#ff4444" opacity="0.8"/>
+            <circle cx="42" cy="20" r="1" fill="#ff4444" opacity="0.8"/>
+        </svg>
+
+        <svg class="bat bat3" viewBox="0 0 80 40" width="32" height="16">
+            <path class="bat-wing-left" d="M 40 20 Q 30 5 10 8 Q 20 15 15 22 Q 25 18 40 20" fill="rgba(150,150,160,0.7)"/>
+            <path class="bat-wing-right" d="M 40 20 Q 50 5 70 8 Q 60 15 65 22 Q 55 18 40 20" fill="rgba(150,150,160,0.7)"/>
+            <ellipse cx="40" cy="22" rx="5" ry="6" fill="rgba(130,130,140,0.8)"/>
+        </svg>
+
+        <svg class="bat bat4" viewBox="0 0 80 40" width="45" height="22">
+            <path class="bat-wing-left" d="M 40 20 Q 30 5 10 8 Q 20 15 15 22 Q 25 18 40 20" fill="rgba(170,170,180,0.8)"/>
+            <path class="bat-wing-right" d="M 40 20 Q 50 5 70 8 Q 60 15 65 22 Q 55 18 40 20" fill="rgba(170,170,180,0.8)"/>
+            <ellipse cx="40" cy="22" rx="5" ry="6" fill="rgba(150,150,160,0.85)"/>
+            <circle cx="38" cy="20" r="1.2" fill="#ff3333" opacity="0.8"/>
+            <circle cx="42" cy="20" r="1.2" fill="#ff3333" opacity="0.8"/>
+        </svg>
+
+        <!-- Floating particles (dust / spooky motes) -->
+        <div class="particle p1"></div>
+        <div class="particle p2"></div>
+        <div class="particle p3"></div>
+        <div class="particle p4"></div>
+        <div class="particle p5"></div>
+        <div class="particle p6"></div>
+        <div class="particle p7"></div>
+        <div class="particle p8"></div>
+
+        <!-- Horror Text Container with Blood Drips -->
+        <div class="title-container">
+            <h1 id="horrorText">HORROR</h1>
+            
+            <!-- SVG Static Blood Drips hanging from letters -->
+            <svg class="blood-drips-svg" viewBox="0 0 350 40" preserveAspectRatio="none">
+                <!-- Blood drip shapes underneath text -->
+                <path class="static-drip drip1" d="M 25 0 Q 30 25 35 25 Q 40 25 45 0 Z" fill="#b30000" />
+                <path class="static-drip drip2" d="M 80 0 Q 84 32 88 32 Q 92 32 96 0 Z" fill="#d60000" />
+                <path class="static-drip drip3" d="M 140 0 Q 146 38 150 38 Q 154 38 160 0 Z" fill="#990000" />
+                <path class="static-drip drip4" d="M 210 0 Q 214 28 218 28 Q 222 28 226 0 Z" fill="#cc0000" />
+                <path class="static-drip drip5" d="M 275 0 Q 280 35 285 35 Q 290 35 295 0 Z" fill="#e60000" />
+                <path class="static-drip drip6" d="M 320 0 Q 323 22 326 22 Q 329 22 332 0 Z" fill="#b30000" />
+            </svg>
+
+            <!-- Dynamic blood drops spawn area -->
+            <div id="bloodDropContainer"></div>
+        </div>
+
+        <svg id="curve" width="100%" height="280" viewBox="0 0 1000 280" preserveAspectRatio="none">
+            <defs>
+                <clipPath id="eyeClip">
+                    <path id="eyeClipPath" d="M 360 145 Q 500 145 640 145 Q 500 145 360 145 Z" />
+                </clipPath>
+            </defs>
+
+            <!-- Main Interactive String Curve -->
+            <!-- <path
+                id="line"
+                d="M 10 100 Q 500 100 990 100"
+                fill="none"
+                stroke="black"
+                stroke-width="3"
+                stroke-linecap="round"
+            /> -->
+
+            <!-- Eye Graphics clipped inside eyeClip -->
+            <g id="eyeGroup" clip-path="url(#eyeClip)">
+                <ellipse id="sclera" cx="500" cy="145" rx="140" ry="60" fill="white" />
+                <g id="pupilGroup">
+                    <circle id="iris" cx="500" cy="145" r="28" fill="#8b0000" />
+                    <circle id="pupil" cx="500" cy="145" r="16" fill="black" />
+                    <circle id="shine" cx="493" cy="138" r="5" fill="rgba(255,100,100,0.6)" />
+                </g>
+            </g>
+
+            <!-- Eyelid Outlines -->
+            <path id="eyeTop" d="M 360 145 Q 500 145 640 145" fill="none" stroke="black" stroke-width="3" stroke-linecap="round"/>
+            <path id="eyeBottom" d="M 360 145 Q 500 145 640 145" fill="none" stroke="black" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+
+    </div>
+
+    <!-- GSAP 3.13.0 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
